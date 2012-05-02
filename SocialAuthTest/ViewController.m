@@ -46,15 +46,15 @@
 }
 
 -(IBAction)testSendToReadItLater:(id)sender{
-    [[JJSocialShareManager sharedManager] sendToReadItLaterWithMessage:@"read it later" urlString:@"url"];
+    [[JJSocialShareManager sharedManager] sendToReadItLaterWithTitle:@"title" message:@"read it later" urlString:@"url"];
 }
 
 -(IBAction)testSendToInstapaper:(id)sender{
-    [[JJSocialShareManager sharedManager] sendToInstapaperWithMessage:@"message" urlString:@"www.google.com"];
+    [[JJSocialShareManager sharedManager] sendToInstapaperWithTitle:@"title" message:@"message" urlString:@"www.google.com"];
 }
 
 -(IBAction)testSendToMail:(id)sender{
-    [[JJSocialShareManager sharedManager] sendToEmailWithTitle:@"title" message:@"message" urlString:@"www.google.com"];
+    [[JJSocialShareManager sharedManager] sendToMailWithTitle:@"title" message:@"message" urlString:@"www.google.com"];
 }
 
 -(IBAction)testSendToFacebook:(id)sender{

@@ -14,7 +14,7 @@
 -(IBAction)testSendToWeibo;
 -(IBAction)testSendToReadItLater:(id)sender;
 -(IBAction)testSendToInstapaper:(id)sender;
--(IBAction)testSendToEmail:(id)sender;
+-(IBAction)testSendToMail:(id)sender;
 -(IBAction)testSendToFacebook:(id)sender;
 
 @end

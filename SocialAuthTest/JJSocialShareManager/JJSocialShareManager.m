@@ -96,7 +96,10 @@ static UIViewController* _rootViewController = nil;
 -(void)sendToFacebookWithTitle:(NSString*)title message:(NSString*)message{
     NSURL *url = [NSURL URLWithString:message];
     SHKItem *item = [SHKItem URL:url title:title];
-    
+    SHKFacebook* facebook = [[[SHKFacebook alloc] init] autorelease];
+    facebook.shareDelegate = self;
+    [facebook setItem:item];
+    [facebook share];
     // Share the item
     [SHKFacebook shareItem:item];
 }
@@ -148,6 +151,7 @@ static UIViewController* _rootViewController = nil;
 }
 
 -(void)sharer:(SHKSharer *)sharer failedWithError:(NSError *)error shouldRelogin:(BOOL)shouldRelogin{
+    NSLog(@"error encountered while sharring: %@", [error localizedDescription]);
     if ([self.delegate respondsToSelector:@selector(shareManager:failedWithError:shouldRelogin:category:)]){
         [self.delegate shareManager:self failedWithError:error shouldRelogin:shouldRelogin category:[self categoryWithSharer:sharer]];
     }
