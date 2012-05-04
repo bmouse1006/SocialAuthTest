@@ -291,6 +291,9 @@ BOOL SHKinit;
 			case SHKShareTypeFile:
 				favoriteSharers = [NSArray arrayWithObjects:@"SHKMail", nil];
 				break;
+            default:
+                favoriteSharers = [NSArray array];
+                break;
 		}
 		
 		// Save defaults to prefs

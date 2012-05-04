@@ -35,6 +35,8 @@
 @property(retain) NSString *secret;
 @property(retain) NSString *sessionHandle;
 
+@property (retain) NSString* pin;
+
 - (id)initWithKey:(NSString *)aKey secret:(NSString *)aSecret;
 - (id)initWithUserDefaultsUsingServiceProviderName:(NSString *)provider prefix:(NSString *)prefix;
 - (id)initWithHTTPResponseBody:(NSString *)body;

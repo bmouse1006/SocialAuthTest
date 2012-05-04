@@ -22,6 +22,19 @@
 
 @implementation WBWeiboComposeViewController
 
+@synthesize composeDialog = _composeDialog, backgroundView = _backgroundView;
+@synthesize toolBar = _toolbar;
+@synthesize sepertorLine = _sepertorLine, titleLabel = _titleLabel;
+
+-(void)dealloc{
+    self.composeDialog = nil;
+    self.backgroundView = nil;
+    self.toolBar = nil;
+    self.sepertorLine = nil;
+    self.titleLabel = nil;
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,8 +47,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.modalPresentationStyle = UIModalPresentationCurrentContext;  
     // Do any additional setup after loading the view from its nib.
+    
+    self.titleLabel.text = NSLocalizedString(@"Weibo", nil);
+    CGRect frame = self.sepertorLine.frame;
+    frame.origin.x = 5;
+    frame.origin.y = 40;
+    frame.size.height = 0.5f;
+    frame.size.width = 295;
+    self.sepertorLine.frame = frame;
+    self.sepertorLine.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)viewDidUnload

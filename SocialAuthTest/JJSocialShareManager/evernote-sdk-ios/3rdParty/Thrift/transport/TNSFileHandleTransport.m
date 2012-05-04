@@ -66,9 +66,9 @@
 }
 
 
-- (void) write: (uint8_t *) data offset: (unsigned int) offset length: (unsigned int) length
+- (void) write: (const uint8_t *) data offset: (unsigned int) offset length: (unsigned int) length
 {
-  NSData * dataObject = [[NSData alloc] initWithBytesNoCopy: data+offset
+  NSData * dataObject = [[NSData alloc] initWithBytesNoCopy: (void*)(data+offset)
                                                      length: length
                                                freeWhenDone: NO];
 

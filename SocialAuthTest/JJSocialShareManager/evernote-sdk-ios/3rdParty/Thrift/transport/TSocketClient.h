@@ -20,7 +20,7 @@
 #import <Foundation/Foundation.h>
 #import "TNSStreamTransport.h"
 
-@interface TSocketClient : TNSStreamTransport {
+@interface TSocketClient : TNSStreamTransport<NSStreamDelegate> {
 }
 
 - (id) initWithHostname: (NSString *) hostname

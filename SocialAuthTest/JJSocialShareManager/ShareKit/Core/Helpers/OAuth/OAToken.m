@@ -30,6 +30,7 @@
 @implementation OAToken
 
 @synthesize key, secret, sessionHandle;
+@synthesize pin;
 
 #pragma mark init
 
@@ -90,6 +91,7 @@
 
 - (void)dealloc
 {
+    self.pin = nil;
 	[key release];
 	[secret release];
 	[sessionHandle release];
