@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "OAuthController.h"
 
-@interface WBWeiboComposeViewController : UIViewController<OAuthControllerDelegate>
+@interface WBWeiboComposeViewController : UIViewController<OAuthControllerDelegate, UITextViewDelegate>
 
 @property (nonatomic, retain) IBOutlet UIView* backgroundView;
 @property (nonatomic, retain) IBOutlet UIView* composeDialog;
@@ -18,9 +18,22 @@
 @property (nonatomic, retain) IBOutlet UIView* sepertorLine;
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 
+@property (nonatomic, retain) IBOutlet UITextView* textView;
+@property (nonatomic, retain) IBOutlet UIImageView* contentImageView;
+
+@property (nonatomic, retain) IBOutlet UIView* contentContainer;
+@property (nonatomic, retain) IBOutlet UIView* contentView;
+
+@property (nonatomic, retain) IBOutlet UIButton* checkedButton;
+
 -(void)setInitialText:(NSString*)text;
 -(void)addImage:(UIImage*)image;
 
--(void)show;
+-(void)show:(BOOL)animated;
+
+-(IBAction)share:(id)sender;
+-(IBAction)close:(id)sender;
+
++(id)sharedController;
 
 @end

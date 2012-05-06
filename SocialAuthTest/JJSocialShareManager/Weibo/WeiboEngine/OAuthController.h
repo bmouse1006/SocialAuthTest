@@ -33,7 +33,7 @@
 	
 }
 
-@property (nonatomic, readwrite, retain) OAuthEngine *engine;
+@property (nonatomic, retain) OAuthEngine *engine;
 @property (nonatomic, readwrite, assign) id <OAuthControllerDelegate> delegate;
 @property (nonatomic, readonly) UINavigationBar *navigationBar;
 

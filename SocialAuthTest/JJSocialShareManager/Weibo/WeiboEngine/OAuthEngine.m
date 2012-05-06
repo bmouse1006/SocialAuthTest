@@ -71,7 +71,7 @@ static OAuthEngine * _currentOAuthEngine;
 }
 
 
-- (OAuthEngine *) initOAuthWithDelegate: (NSObject<OAuthEngineDelegate>*) delegate {
+- (OAuthEngine *) initOAuthWithDelegate: (NSObject *) delegate {
     if (self = (id) [super init]) {
 		_delegate = delegate;
 		self.requestTokenURL = [NSURL URLWithString: @"http://api.t.sina.com.cn/oauth/request_token"];

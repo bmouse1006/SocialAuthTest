@@ -128,7 +128,7 @@
 	frame.origin.y = 44;
 	frame.size.height -= 44;
 	_webView = [[UIWebView alloc] initWithFrame: ApplicationFrame(self.orientation)];
-	_webView.alpha = 0.0;
+//	_webView.alpha = 0.0;
 	_webView.delegate = self;
 	//_webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	if ([_webView respondsToSelector: @selector(setDetectsPhoneNumbers:)]) [(id) _webView setDetectsPhoneNumbers: NO];
@@ -229,15 +229,15 @@
 	
 	*/
 	
-	[UIView beginAnimations: nil context: nil];
-	_blockerView.alpha = 0.0;
-	[UIView commitAnimations];
+    [UIView animateWithDuration:0.2f animations:^{
+        _blockerView.alpha = 0.0f;
+    }];
 	
-	if ([_webView isLoading]) {
-		_webView.alpha = 0.0;
-	} else {
-		_webView.alpha = 1.0;
-	}
+//	if ([_webView isLoading]) {
+//		_webView.alpha = 0.0;
+//	} else {
+//		_webView.alpha = 1.0;
+//	}
 }
 
 - (void) showPinCopyPrompt {
@@ -331,7 +331,7 @@
 		[self denied];
 		return NO;
 	}
-	if (navigationType != UIWebViewNavigationTypeOther) _webView.alpha = 0.1;
+//	if (navigationType != UIWebViewNavigationTypeOther) _webView.alpha = 0.1;
 	return YES;
 }
 
