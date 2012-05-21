@@ -16,5 +16,6 @@
 -(IBAction)testSendToInstapaper:(id)sender;
 -(IBAction)testSendToMail:(id)sender;
 -(IBAction)testSendToFacebook:(id)sender;
+-(IBAction)testSendToEvernote:(id)sender;
 
 @end

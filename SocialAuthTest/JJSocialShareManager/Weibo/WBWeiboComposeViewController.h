@@ -35,5 +35,6 @@
 -(IBAction)close:(id)sender;
 
 +(id)sharedController;
++(id)controller;
 
 @end

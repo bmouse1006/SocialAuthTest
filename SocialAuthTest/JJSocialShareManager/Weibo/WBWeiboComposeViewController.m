@@ -78,6 +78,12 @@
     return controller;
 }
 
++(id)controller{
+    WBWeiboComposeViewController* controller = [[[WBWeiboComposeViewController alloc] initWithNibName:@"WBWeiboComposeViewController" bundle:nil] autorelease];
+
+    return controller;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -129,6 +135,7 @@
     //check if weibo is authorized
     if ([self.weiboEngine isAuthorized] == NO && _autoPromoteAuthController){
         OAuthController* controller = [OAuthController controllerToEnterCredentialsWithEngine:self.weiboEngine delegate:self];
+        controller.delegate = self;
         [self presentViewController:controller animated:YES completion:NULL];
         _autoPromoteAuthController = NO;
     }else{
@@ -239,7 +246,9 @@
 
 - (void) OAuthControllerCanceled: (OAuthController *) controller {
 	NSLog(@"Authentication Canceled.");
-    [self dismiss:YES];
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }];
 }
 
 @end

@@ -41,7 +41,7 @@ typedef enum{
 -(void)sendToWeiboWithMessage:(NSString*)message urlString:(NSString*)urlString image:(UIImage*)image;
 -(void)sendToTwitterWithText:(NSString*)text urlString:(NSString*)urlString image:(UIImage*)image;
 -(void)sendToFacebookWithTitle:(NSString*)title message:(NSString*)message;
--(void)sendToEvernoteWithTitle:(NSString*)title message:(NSString*)message;
+-(void)sendToEvernoteWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString*)urlString;
 -(void)sendToReadItLaterWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString*)urlString;
 -(void)sendToInstapaperWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString*)urlString;
 -(void)sendToMailWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString*)urlString;

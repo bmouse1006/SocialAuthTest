@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ENNoteComposerController : UIViewController
+@interface ENNoteComposerController : UITableViewController
 
+@property (nonatomic, retain) IBOutlet UITableViewCell* titleCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell* messageCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell* urlCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell* notebookCell;
 
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* sendButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* cancelButton;
+
+-(IBAction)cancelButtonClicked:(id)sender;
+-(IBAction)sendButtonClicked:(id)sender;
 
 @end

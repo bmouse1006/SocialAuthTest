@@ -264,6 +264,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">testSendToEvernote:</string>
+						<reference key="source" ref="280971003"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">24</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">testSendToInstapaper:</string>
 						<reference key="source" ref="890673633"/>
 						<reference key="destination" ref="372490531"/>
@@ -378,7 +387,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">23</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -386,6 +395,7 @@
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="testSendToEvernote:">id</string>
 						<string key="testSendToFacebook:">id</string>
 						<string key="testSendToInstapaper:">id</string>
 						<string key="testSendToMail:">id</string>
@@ -394,6 +404,10 @@
 						<string key="testSendToWeibo">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="testSendToEvernote:">
+							<string key="name">testSendToEvernote:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="testSendToFacebook:">
 							<string key="name">testSendToFacebook:</string>
 							<string key="candidateClassName">id</string>

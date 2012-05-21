@@ -61,4 +61,8 @@
     [[JJSocialShareManager sharedManager] sendToFacebookWithTitle:@"test" message:@"test"];
 }
 
+-(IBAction)testSendToEvernote:(id)sender{
+    [[JJSocialShareManager sharedManager] sendToEvernoteWithTitle:@"test" message:@"message" urlString:@"urlString"];
+}
+
 @end

@@ -10,6 +10,7 @@
 #import <Twitter/Twitter.h>
 //weibo header and define
 #import "WBWeiboComposeViewController.h"
+#import "ENNoteComposerController.h"
 #import "SHK.h"
 #import "SHKReadItLater.h"
 #import "SHKFacebook.h"
@@ -78,7 +79,7 @@ static UIViewController* _rootViewController = nil;
 #pragma mark - send to interface
 -(void)sendToWeiboWithMessage:(NSString*)message urlString:(NSString*)urlString image:(UIImage*)image{
     
-    WBWeiboComposeViewController* controller = [WBWeiboComposeViewController sharedController];
+    WBWeiboComposeViewController* controller = [WBWeiboComposeViewController controller];
     [controller setInitialText:message];
     [controller addImage:image];
     
@@ -97,8 +98,10 @@ static UIViewController* _rootViewController = nil;
     [SHKFacebook shareItem:[self itemWithTitle:title message:message urlString:nil]];
 }
 
--(void)sendToEvernoteWithTitle:(NSString*)title message:(NSString*)message{
-    
+-(void)sendToEvernoteWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString *)urlString{
+    ENNoteComposerController* controller = [[[ENNoteComposerController alloc] init] autorelease];
+    UINavigationController* nav = [[[UINavigationController alloc] initWithRootViewController:controller] autorelease];
+    [[[self class] rootViewController] presentViewController:nav animated:YES completion:NULL];
 }
 
 -(void)sendToReadItLaterWithTitle:(NSString *)title message:(NSString *)message urlString:(NSString *)urlString{
