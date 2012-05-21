@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "JJSocialShareManager.h"
 #import "ViewController.h"
+#import "EvernoteSDK.h"
 
 @interface AppDelegate()
 
@@ -62,6 +63,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+-(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    if ([[EvernoteSession sharedSession] handleOpenURL:url]) {
+        return YES;
+    } 
+    return NO;
 }
 
 @end

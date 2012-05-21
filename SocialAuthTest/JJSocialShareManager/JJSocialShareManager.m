@@ -99,7 +99,9 @@ static UIViewController* _rootViewController = nil;
 }
 
 -(void)sendToEvernoteWithTitle:(NSString*)title message:(NSString*)message urlString:(NSString *)urlString{
-    ENNoteComposerController* controller = [[[ENNoteComposerController alloc] init] autorelease];
+    ENNoteComposerController* controller = [[[ENNoteComposerController alloc] initWithNibName:@"ENNoteComposerController" bundle:nil] autorelease];
+    [controller setENTitle:title];
+    [controller setENContent:message];
     UINavigationController* nav = [[[UINavigationController alloc] initWithRootViewController:controller] autorelease];
     [[[self class] rootViewController] presentViewController:nav animated:YES completion:NULL];
 }

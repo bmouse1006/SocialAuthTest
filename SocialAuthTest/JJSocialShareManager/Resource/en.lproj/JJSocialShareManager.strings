@@ -12,5 +12,7 @@
 "title_sendtoevernote" = "Send to Evernote";
 "title_title" = "Title";
 "title_message" = "Note";
-"title_url" = "Save URL only";
+"title_url" = "Save URL";
 "title_notebook" = "Notebook";
+"title_notebooklist" = "Notebook list";
+"title_send" = "Send";

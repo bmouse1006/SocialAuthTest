@@ -183,6 +183,8 @@
 		22D9CA5515540C8C003E40E1 /* sendto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D9CA5315540C8B003E40E1 /* sendto@2x.png */; };
 		22D9CA5815540D29003E40E1 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D9CA5615540D29003E40E1 /* cancel.png */; };
 		22D9CA5915540D29003E40E1 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D9CA5715540D29003E40E1 /* cancel@2x.png */; };
+		22DA0D1D156A7282009F811A /* ENNotebookListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DA0D1B156A7282009F811A /* ENNotebookListViewController.m */; };
+		22DA0D1E156A7282009F811A /* ENNotebookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DA0D1C156A7282009F811A /* ENNotebookListViewController.xib */; };
 		22E55651155500030048E331 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E5564F155500030048E331 /* checked.png */; };
 		22E55652155500030048E331 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E55650155500030048E331 /* unchecked.png */; };
 		22E55656155500540048E331 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E55654155500540048E331 /* checked@2x.png */; };
@@ -551,6 +553,9 @@
 		22D9CA5315540C8B003E40E1 /* sendto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sendto@2x.png"; sourceTree = "<group>"; };
 		22D9CA5615540D29003E40E1 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		22D9CA5715540D29003E40E1 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		22DA0D1A156A7282009F811A /* ENNotebookListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENNotebookListViewController.h; sourceTree = "<group>"; };
+		22DA0D1B156A7282009F811A /* ENNotebookListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENNotebookListViewController.m; sourceTree = "<group>"; };
+		22DA0D1C156A7282009F811A /* ENNotebookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ENNotebookListViewController.xib; sourceTree = "<group>"; };
 		22E5564F155500030048E331 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		22E55650155500030048E331 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		22E55654155500540048E331 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
@@ -658,6 +663,9 @@
 				22E556AC15561CC50048E331 /* ENNoteComposerController.h */,
 				22E556AD15561CC50048E331 /* ENNoteComposerController.m */,
 				22E556AE15561CC50048E331 /* ENNoteComposerController.xib */,
+				22DA0D1A156A7282009F811A /* ENNotebookListViewController.h */,
+				22DA0D1B156A7282009F811A /* ENNotebookListViewController.m */,
+				22DA0D1C156A7282009F811A /* ENNotebookListViewController.xib */,
 			);
 			path = "evernote-sdk-ios";
 			sourceTree = "<group>";
@@ -1593,6 +1601,7 @@
 				22E556A815561BB40048E331 /* BaseMessageView.xib in Resources */,
 				22E556B015561CC50048E331 /* ENNoteComposerController.xib in Resources */,
 				222AA092156A3CF000F13799 /* JJSocialShareManager.strings in Resources */,
+				22DA0D1E156A7282009F811A /* ENNotebookListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1760,6 +1769,7 @@
 				22E556A915561BB40048E331 /* BaseView.m in Sources */,
 				22E556AA15561BB40048E331 /* ImageScrollView.m in Sources */,
 				22E556AF15561CC50048E331 /* ENNoteComposerController.m in Sources */,
+				22DA0D1D156A7282009F811A /* ENNotebookListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
