@@ -42,7 +42,7 @@
 }
 
 -(IBAction)testSendToWeibo{
-    [[JJSocialShareManager sharedManager] sendToWeiboWithMessage:@"aaaaaa" urlString:@"" image:nil];
+    [[JJSocialShareManager sharedManager] sendToWeiboWithMessage:@"aaaaaa" urlString:@"www.google.com" image:nil];
 }
 
 -(IBAction)testSendToReadItLater:(id)sender{
@@ -62,7 +62,7 @@
 }
 
 -(IBAction)testSendToEvernote:(id)sender{
-    [[JJSocialShareManager sharedManager] sendToEvernoteWithTitle:@"test" message:@"message" urlString:@"urlString"];
+    [[JJSocialShareManager sharedManager] sendToEvernoteWithTitle:@"test" message:@"message" urlString:@"www.evernote.com"];
 }
 
 @end

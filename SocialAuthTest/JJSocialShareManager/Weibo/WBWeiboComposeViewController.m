@@ -14,6 +14,9 @@
 #import "BaseAlertView.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define WeiboLocalizedString(key, comment) \
+[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"WeiboLocalizable"]
+
 #define kWeiboOAuthConsumerKey      @"899283629" //replace
 #define kWeiboOAuthConsumerSecret   @"fd35ec9563f631cd5ecfb2a1dda8cc9c" //replace
 #define kWeiboOAuthStoreKey @"kWeiboOAuthStoreKey"
@@ -21,10 +24,15 @@
 @interface WBWeiboComposeViewController (){
     UIStatusBarStyle _previousStatusBarStyle;
     BOOL _autoPromoteAuthController;
+    UIModalPresentationStyle _previousPresentationStyle;
 }
 
 @property (nonatomic, assign) UIViewController* rootController;
 @property (nonatomic, retain) OAuthEngine* weiboEngine;
+
+@property (nonatomic, copy) NSString* initialText;
+@property (nonatomic, retain) UIImage* image;
+@property (nonatomic, copy) NSString* urlString;
 
 @end
 
@@ -38,6 +46,7 @@
 @synthesize checkedButton = _checkedButton;
 @synthesize rootController = _rootController;
 @synthesize weiboEngine = _weiboEngine;
+@synthesize initialText = _initialText, image = _image, urlString = _urlString;
 
 -(void)dealloc{
     self.composeDialog = nil;
@@ -51,6 +60,9 @@
     self.contentView = nil;
     self.checkedButton = nil;
     self.weiboEngine = nil;
+    self.initialText = nil;
+    self.image = nil;
+    self.urlString = nil;
     [super dealloc];
 }
 
@@ -104,6 +116,12 @@
     frame.size.width = self.contentView.frame.size.width - 20.0f;
     self.sepertorLine.frame = frame;
     self.sepertorLine.backgroundColor = [UIColor lightGrayColor];
+    
+    NSString* content = (self.urlString.length > 0)?[NSString stringWithFormat:@"%@ %@", self.initialText, self.urlString]:self.initialText;
+    
+    self.textView.text = content;
+    self.contentImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.contentImageView.image = self.image;
 }
 
 - (void)viewDidUnload
@@ -152,23 +170,30 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(void)setInitialText:(NSString*)text{
-    self.textView.text = text;
+-(void)addInitialText:(NSString*)text{
+    self.initialText = text;
 }
 
 -(void)addImage:(UIImage*)image{
-    
+    self.image = image;
+}
+
+-(void)addURLString:(NSString *)urlString{
+    self.urlString = urlString;
 }
 
 -(void)show:(BOOL)animated{
     self.rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    _previousPresentationStyle = self.rootController.modalPresentationStyle;
     self.rootController.modalPresentationStyle = UIModalPresentationCurrentContext; 
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.rootController presentViewController:self animated:YES completion:NULL];
 }
 
 -(void)dismiss:(BOOL)animated{
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:^{
+        self.rootController.modalPresentationStyle = _previousPresentationStyle;
+    }];
 }
 
 -(IBAction)share:(id)sender{
@@ -206,9 +231,9 @@
     //weibo call back
     BaseAlertView* alert = [BaseAlertView loadFromBundle];
     if (sender.errorDetail.length > 0){
-        alert.message = @"Weibo send failed!";
+        alert.message = WeiboLocalizedString(@"Weibo send failed!", nil);
     }else{
-        alert.message = @"Weibo send succeeded!";
+        alert.message = WeiboLocalizedString(@"Weibo send succeeded!", nil);
     }
     [alert show];
 }
@@ -241,13 +266,19 @@
 
 - (void) OAuthControllerFailed: (OAuthController *) controller {
 	NSLog(@"Authentication Failed!");
+    BaseAlertView* alert = [BaseAlertView loadFromBundle];
+    alert.message = WeiboLocalizedString(@"Authentication Failed!", nil);
+    [alert show];
+    [controller dismissViewControllerAnimated:YES completion:^{
+        [self dismiss:YES];
+    }];
 	
 }
 
 - (void) OAuthControllerCanceled: (OAuthController *) controller {
 	NSLog(@"Authentication Canceled.");
     [controller dismissViewControllerAnimated:YES completion:^{
-        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self dismiss:YES];
     }];
 }
 

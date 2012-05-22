@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		222AA092156A3CF000F13799 /* JJSocialShareManager.strings in Resources */ = {isa = PBXBuildFile; fileRef = 222AA094156A3CF000F13799 /* JJSocialShareManager.strings */; };
+		221DAB64156B350C00FC5DDD /* BaseActivityLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB4D156B350C00FC5DDD /* BaseActivityLabel.m */; };
+		221DAB65156B350C00FC5DDD /* BaseActivityLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB4E156B350C00FC5DDD /* BaseActivityLabel.xib */; };
+		221DAB66156B350C00FC5DDD /* BaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB50156B350C00FC5DDD /* BaseAlertView.m */; };
+		221DAB67156B350C00FC5DDD /* BaseAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB51156B350C00FC5DDD /* BaseAlertView.xib */; };
+		221DAB6A156B350C00FC5DDD /* BaseMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB56156B350C00FC5DDD /* BaseMessageView.m */; };
+		221DAB6B156B350C00FC5DDD /* BaseMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB57156B350C00FC5DDD /* BaseMessageView.xib */; };
+		221DAB6C156B350C00FC5DDD /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB5A156B350C00FC5DDD /* BaseView.m */; };
+		221DAB6D156B350C00FC5DDD /* checkmark_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB5B156B350C00FC5DDD /* checkmark_big.png */; };
+		221DAB6E156B350C00FC5DDD /* checkmark_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB5C156B350C00FC5DDD /* checkmark_big@2x.png */; };
+		221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB62156B350C00FC5DDD /* JJPickerView.m */; };
+		221DAB72156B350C00FC5DDD /* JJPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB63156B350C00FC5DDD /* JJPickerView.xib */; };
+		221DAB77156B3B0A00FC5DDD /* Evernote.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB79156B3B0A00FC5DDD /* Evernote.strings */; };
+		22707FD0156B680800773721 /* ENNoteContentTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 22707FCF156B680800773721 /* ENNoteContentTemplate.xml */; };
+		22707FD3156B894300773721 /* WeiboLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22707FD5156B894300773721 /* WeiboLocalizable.strings */; };
 		22872CFC155205E90083E700 /* GCOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 22872CAF155205E90083E700 /* GCOAuth.m */; };
 		22872CFD155205E90083E700 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 22872CB0155205E90083E700 /* LICENSE */; };
 		22872CFE155205E90083E700 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 22872CB2155205E90083E700 /* NSData+Base64.m */; };
@@ -131,7 +144,7 @@
 		2294EA7615513D2500A56CCE /* SHKCustomFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294E9FD15513D2500A56CCE /* SHKCustomFormFieldCell.m */; };
 		2294EA7715513D2500A56CCE /* SHKCustomShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294E9FF15513D2500A56CCE /* SHKCustomShareMenu.m */; };
 		2294EA7815513D2500A56CCE /* SHKCustomShareMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0115513D2500A56CCE /* SHKCustomShareMenuCell.m */; };
-		2294EA7915513D2500A56CCE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2294EA0315513D2500A56CCE /* Localizable.strings */; };
+		2294EA7915513D2500A56CCE /* SHKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2294EA0315513D2500A56CCE /* SHKLocalizable.strings */; };
 		2294EA7A15513D2500A56CCE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0815513D2500A56CCE /* Reachability.m */; };
 		2294EA7B15513D2500A56CCE /* SHKCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0D15513D2500A56CCE /* SHKCopy.m */; };
 		2294EA7C15513D2500A56CCE /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA1015513D2500A56CCE /* SHKMail.m */; };
@@ -204,22 +217,35 @@
 		22E556851555642A0048E331 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E556721555642A0048E331 /* OARequestParameter.m */; };
 		22E556861555642A0048E331 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E556741555642A0048E331 /* OAServiceTicket.m */; };
 		22E556871555642A0048E331 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E556771555642A0048E331 /* OAToken.m */; };
-		22E5568C15561A1D0048E331 /* Localizable_share.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22E5568B15561A1A0048E331 /* Localizable_share.strings */; };
-		22E556A115561BB40048E331 /* BaseActivityLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E5568F15561BB40048E331 /* BaseActivityLabel.m */; };
-		22E556A215561BB40048E331 /* BaseActivityLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E5569015561BB40048E331 /* BaseActivityLabel.xib */; };
-		22E556A315561BB40048E331 /* BaseAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E5569215561BB40048E331 /* BaseAlertView.m */; };
-		22E556A415561BB40048E331 /* BaseAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E5569315561BB40048E331 /* BaseAlertView.xib */; };
-		22E556A715561BB40048E331 /* BaseMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E5569815561BB40048E331 /* BaseMessageView.m */; };
-		22E556A815561BB40048E331 /* BaseMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E5569915561BB40048E331 /* BaseMessageView.xib */; };
-		22E556A915561BB40048E331 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E5569C15561BB40048E331 /* BaseView.m */; };
-		22E556AA15561BB40048E331 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E5569E15561BB40048E331 /* ImageScrollView.m */; };
 		22E556AF15561CC50048E331 /* ENNoteComposerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E556AD15561CC50048E331 /* ENNoteComposerController.m */; };
 		22E556B015561CC50048E331 /* ENNoteComposerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22E556AE15561CC50048E331 /* ENNoteComposerController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		222AA093156A3CF000F13799 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/JJSocialShareManager.strings; sourceTree = "<group>"; };
-		222AA095156A3CF800F13799 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/JJSocialShareManager.strings"; sourceTree = "<group>"; };
+		221DAB4C156B350C00FC5DDD /* BaseActivityLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseActivityLabel.h; sourceTree = "<group>"; };
+		221DAB4D156B350C00FC5DDD /* BaseActivityLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseActivityLabel.m; sourceTree = "<group>"; };
+		221DAB4E156B350C00FC5DDD /* BaseActivityLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseActivityLabel.xib; sourceTree = "<group>"; };
+		221DAB4F156B350C00FC5DDD /* BaseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAlertView.h; sourceTree = "<group>"; };
+		221DAB50156B350C00FC5DDD /* BaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAlertView.m; sourceTree = "<group>"; };
+		221DAB51156B350C00FC5DDD /* BaseAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseAlertView.xib; sourceTree = "<group>"; };
+		221DAB55156B350C00FC5DDD /* BaseMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMessageView.h; sourceTree = "<group>"; };
+		221DAB56156B350C00FC5DDD /* BaseMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMessageView.m; sourceTree = "<group>"; };
+		221DAB57156B350C00FC5DDD /* BaseMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseMessageView.xib; sourceTree = "<group>"; };
+		221DAB58156B350C00FC5DDD /* BasePromptViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePromptViews.h; sourceTree = "<group>"; };
+		221DAB59156B350C00FC5DDD /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		221DAB5A156B350C00FC5DDD /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		221DAB5B156B350C00FC5DDD /* checkmark_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark_big.png; sourceTree = "<group>"; };
+		221DAB5C156B350C00FC5DDD /* checkmark_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark_big@2x.png"; sourceTree = "<group>"; };
+		221DAB61156B350C00FC5DDD /* JJPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJPickerView.h; sourceTree = "<group>"; };
+		221DAB62156B350C00FC5DDD /* JJPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJPickerView.m; sourceTree = "<group>"; };
+		221DAB63156B350C00FC5DDD /* JJPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JJPickerView.xib; sourceTree = "<group>"; };
+		221DAB78156B3B0A00FC5DDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Evernote.strings; sourceTree = "<group>"; };
+		221DAB7A156B3B1000FC5DDD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Evernote.strings"; sourceTree = "<group>"; };
+		221DAB7B156B3B8900FC5DDD /* EvernoteCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvernoteCommonDefine.h; sourceTree = "<group>"; };
+		22707FCF156B680800773721 /* ENNoteContentTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ENNoteContentTemplate.xml; sourceTree = "<group>"; };
+		22707FD2156B7C8F00773721 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SHKLocalizable.strings"; sourceTree = "<group>"; };
+		22707FD4156B894300773721 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeiboLocalizable.strings; sourceTree = "<group>"; };
+		22707FD6156B894A00773721 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/WeiboLocalizable.strings"; sourceTree = "<group>"; };
 		22872CAE155205E90083E700 /* GCOAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCOAuth.h; sourceTree = "<group>"; };
 		22872CAF155205E90083E700 /* GCOAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCOAuth.m; sourceTree = "<group>"; };
 		22872CB0155205E90083E700 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -464,8 +490,8 @@
 		2294E9FF15513D2500A56CCE /* SHKCustomShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKCustomShareMenu.m; sourceTree = "<group>"; };
 		2294EA0015513D2500A56CCE /* SHKCustomShareMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKCustomShareMenuCell.h; sourceTree = "<group>"; };
 		2294EA0115513D2500A56CCE /* SHKCustomShareMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKCustomShareMenuCell.m; sourceTree = "<group>"; };
-		2294EA0415513D2500A56CCE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2294EA0515513D2500A56CCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2294EA0415513D2500A56CCE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SHKLocalizable.strings; sourceTree = "<group>"; };
+		2294EA0515513D2500A56CCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SHKLocalizable.strings; sourceTree = "<group>"; };
 		2294EA0715513D2500A56CCE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		2294EA0815513D2500A56CCE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		2294EA0C15513D2500A56CCE /* SHKCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKCopy.h; sourceTree = "<group>"; };
@@ -592,21 +618,6 @@
 		22E556781555642A0048E331 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken_KeychainExtensions.h; sourceTree = "<group>"; };
 		22E556791555642A0048E331 /* OAToken_KeychainExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken_KeychainExtensions.m; sourceTree = "<group>"; };
 		22E5567A1555642A0048E331 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
-		22E5568B15561A1A0048E331 /* Localizable_share.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable_share.strings; sourceTree = "<group>"; };
-		22E5568E15561BB40048E331 /* BaseActivityLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseActivityLabel.h; sourceTree = "<group>"; };
-		22E5568F15561BB40048E331 /* BaseActivityLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseActivityLabel.m; sourceTree = "<group>"; };
-		22E5569015561BB40048E331 /* BaseActivityLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseActivityLabel.xib; sourceTree = "<group>"; };
-		22E5569115561BB40048E331 /* BaseAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAlertView.h; sourceTree = "<group>"; };
-		22E5569215561BB40048E331 /* BaseAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseAlertView.m; sourceTree = "<group>"; };
-		22E5569315561BB40048E331 /* BaseAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseAlertView.xib; sourceTree = "<group>"; };
-		22E5569715561BB40048E331 /* BaseMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseMessageView.h; sourceTree = "<group>"; };
-		22E5569815561BB40048E331 /* BaseMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseMessageView.m; sourceTree = "<group>"; };
-		22E5569915561BB40048E331 /* BaseMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseMessageView.xib; sourceTree = "<group>"; };
-		22E5569A15561BB40048E331 /* BasePromptViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePromptViews.h; sourceTree = "<group>"; };
-		22E5569B15561BB40048E331 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
-		22E5569C15561BB40048E331 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
-		22E5569D15561BB40048E331 /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
-		22E5569E15561BB40048E331 /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		22E556AC15561CC50048E331 /* ENNoteComposerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENNoteComposerController.h; sourceTree = "<group>"; };
 		22E556AD15561CC50048E331 /* ENNoteComposerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENNoteComposerController.m; sourceTree = "<group>"; };
 		22E556AE15561CC50048E331 /* ENNoteComposerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ENNoteComposerController.xib; sourceTree = "<group>"; };
@@ -637,10 +648,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221DAB4B156B350C00FC5DDD /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				221DAB4C156B350C00FC5DDD /* BaseActivityLabel.h */,
+				221DAB4D156B350C00FC5DDD /* BaseActivityLabel.m */,
+				221DAB4E156B350C00FC5DDD /* BaseActivityLabel.xib */,
+				221DAB4F156B350C00FC5DDD /* BaseAlertView.h */,
+				221DAB50156B350C00FC5DDD /* BaseAlertView.m */,
+				221DAB51156B350C00FC5DDD /* BaseAlertView.xib */,
+				221DAB55156B350C00FC5DDD /* BaseMessageView.h */,
+				221DAB56156B350C00FC5DDD /* BaseMessageView.m */,
+				221DAB57156B350C00FC5DDD /* BaseMessageView.xib */,
+				221DAB58156B350C00FC5DDD /* BasePromptViews.h */,
+				221DAB59156B350C00FC5DDD /* BaseView.h */,
+				221DAB5A156B350C00FC5DDD /* BaseView.m */,
+				221DAB5B156B350C00FC5DDD /* checkmark_big.png */,
+				221DAB5C156B350C00FC5DDD /* checkmark_big@2x.png */,
+				221DAB61156B350C00FC5DDD /* JJPickerView.h */,
+				221DAB62156B350C00FC5DDD /* JJPickerView.m */,
+				221DAB63156B350C00FC5DDD /* JJPickerView.xib */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		221DAB74156B3ADE00FC5DDD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				221DAB79156B3B0A00FC5DDD /* Evernote.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		222AA08F156A3CC500F13799 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				222AA094156A3CF000F13799 /* JJSocialShareManager.strings */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -648,6 +690,7 @@
 		22872CAB155205E90083E700 /* evernote-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
+				221DAB74156B3ADE00FC5DDD /* Resource */,
 				22872CAC155205E90083E700 /* 3rdParty */,
 				22872CE0155205E90083E700 /* EDAM */,
 				22872CEC155205E90083E700 /* evernote-sdk-ios-Prefix.pch */,
@@ -666,6 +709,8 @@
 				22DA0D1A156A7282009F811A /* ENNotebookListViewController.h */,
 				22DA0D1B156A7282009F811A /* ENNotebookListViewController.m */,
 				22DA0D1C156A7282009F811A /* ENNotebookListViewController.xib */,
+				221DAB7B156B3B8900FC5DDD /* EvernoteCommonDefine.h */,
+				22707FCF156B680800773721 /* ENNoteContentTemplate.xml */,
 			);
 			path = "evernote-sdk-ios";
 			sourceTree = "<group>";
@@ -834,7 +879,7 @@
 				2294E75415511FDB00A56CCE /* WBWeiboComposeViewController.h */,
 				2294E75515511FDC00A56CCE /* WBWeiboComposeViewController.m */,
 				2294E75615511FDC00A56CCE /* WBWeiboComposeViewController.xib */,
-				22E5568B15561A1A0048E331 /* Localizable_share.strings */,
+				22707FD5156B894300773721 /* WeiboLocalizable.strings */,
 			);
 			path = Weibo;
 			sourceTree = "<group>";
@@ -958,6 +1003,7 @@
 		2294E78A155129E000A56CCE /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				221DAB4B156B350C00FC5DDD /* BaseView */,
 				2294E8B815512A8000A56CCE /* ASIHTTPRequest */,
 				2294E78B155129FE00A56CCE /* SBJSON */,
 			);
@@ -1177,7 +1223,7 @@
 		2294EA0215513D2500A56CCE /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				2294EA0315513D2500A56CCE /* Localizable.strings */,
+				2294EA0315513D2500A56CCE /* SHKLocalizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -1407,7 +1453,6 @@
 		229D211C1550DC1800F91828 /* SocialAuthTest */ = {
 			isa = PBXGroup;
 			children = (
-				22E5568D15561BB30048E331 /* BaseView */,
 				2294E65C1550F57900A56CCE /* JJSocialShareManager */,
 				229D21251550DC1800F91828 /* AppDelegate.h */,
 				229D21261550DC1800F91828 /* AppDelegate.m */,
@@ -1492,27 +1537,6 @@
 			path = OAuthConsumer;
 			sourceTree = "<group>";
 		};
-		22E5568D15561BB30048E331 /* BaseView */ = {
-			isa = PBXGroup;
-			children = (
-				22E5568E15561BB40048E331 /* BaseActivityLabel.h */,
-				22E5568F15561BB40048E331 /* BaseActivityLabel.m */,
-				22E5569015561BB40048E331 /* BaseActivityLabel.xib */,
-				22E5569115561BB40048E331 /* BaseAlertView.h */,
-				22E5569215561BB40048E331 /* BaseAlertView.m */,
-				22E5569315561BB40048E331 /* BaseAlertView.xib */,
-				22E5569715561BB40048E331 /* BaseMessageView.h */,
-				22E5569815561BB40048E331 /* BaseMessageView.m */,
-				22E5569915561BB40048E331 /* BaseMessageView.xib */,
-				22E5569A15561BB40048E331 /* BasePromptViews.h */,
-				22E5569B15561BB40048E331 /* BaseView.h */,
-				22E5569C15561BB40048E331 /* BaseView.m */,
-				22E5569D15561BB40048E331 /* ImageScrollView.h */,
-				22E5569E15561BB40048E331 /* ImageScrollView.m */,
-			);
-			path = BaseView;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1571,7 +1595,7 @@
 				2294E75815511FDD00A56CCE /* WBWeiboComposeViewController.xib in Resources */,
 				2294E98C15512A8100A56CCE /* README-GHUnit in Resources */,
 				2294EA7415513D2500A56CCE /* SHKSharers.plist in Resources */,
-				2294EA7915513D2500A56CCE /* Localizable.strings in Resources */,
+				2294EA7915513D2500A56CCE /* SHKLocalizable.strings in Resources */,
 				2294EA8015513D2500A56CCE /* FBConnect.bundle in Resources */,
 				22872CFD155205E90083E700 /* LICENSE in Resources */,
 				22872CFF155205E90083E700 /* LICENSE in Resources */,
@@ -1595,13 +1619,17 @@
 				22E55657155500540048E331 /* unchecked@2x.png in Resources */,
 				22E5565A1555109D0048E331 /* table_background_pattern.png in Resources */,
 				22E5565B1555109D0048E331 /* table_background_pattern@2x.png in Resources */,
-				22E5568C15561A1D0048E331 /* Localizable_share.strings in Resources */,
-				22E556A215561BB40048E331 /* BaseActivityLabel.xib in Resources */,
-				22E556A415561BB40048E331 /* BaseAlertView.xib in Resources */,
-				22E556A815561BB40048E331 /* BaseMessageView.xib in Resources */,
+				22707FD3156B894300773721 /* WeiboLocalizable.strings in Resources */,
 				22E556B015561CC50048E331 /* ENNoteComposerController.xib in Resources */,
-				222AA092156A3CF000F13799 /* JJSocialShareManager.strings in Resources */,
 				22DA0D1E156A7282009F811A /* ENNotebookListViewController.xib in Resources */,
+				221DAB65156B350C00FC5DDD /* BaseActivityLabel.xib in Resources */,
+				221DAB67156B350C00FC5DDD /* BaseAlertView.xib in Resources */,
+				221DAB6B156B350C00FC5DDD /* BaseMessageView.xib in Resources */,
+				221DAB6D156B350C00FC5DDD /* checkmark_big.png in Resources */,
+				221DAB6E156B350C00FC5DDD /* checkmark_big@2x.png in Resources */,
+				221DAB72156B350C00FC5DDD /* JJPickerView.xib in Resources */,
+				221DAB77156B3B0A00FC5DDD /* Evernote.strings in Resources */,
+				22707FD0156B680800773721 /* ENNoteContentTemplate.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1763,35 +1791,45 @@
 				22E556851555642A0048E331 /* OARequestParameter.m in Sources */,
 				22E556861555642A0048E331 /* OAServiceTicket.m in Sources */,
 				22E556871555642A0048E331 /* OAToken.m in Sources */,
-				22E556A115561BB40048E331 /* BaseActivityLabel.m in Sources */,
-				22E556A315561BB40048E331 /* BaseAlertView.m in Sources */,
-				22E556A715561BB40048E331 /* BaseMessageView.m in Sources */,
-				22E556A915561BB40048E331 /* BaseView.m in Sources */,
-				22E556AA15561BB40048E331 /* ImageScrollView.m in Sources */,
 				22E556AF15561CC50048E331 /* ENNoteComposerController.m in Sources */,
 				22DA0D1D156A7282009F811A /* ENNotebookListViewController.m in Sources */,
+				221DAB64156B350C00FC5DDD /* BaseActivityLabel.m in Sources */,
+				221DAB66156B350C00FC5DDD /* BaseAlertView.m in Sources */,
+				221DAB6A156B350C00FC5DDD /* BaseMessageView.m in Sources */,
+				221DAB6C156B350C00FC5DDD /* BaseView.m in Sources */,
+				221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		222AA094156A3CF000F13799 /* JJSocialShareManager.strings */ = {
+		221DAB79156B3B0A00FC5DDD /* Evernote.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				222AA093156A3CF000F13799 /* en */,
-				222AA095156A3CF800F13799 /* zh-Hans */,
+				221DAB78156B3B0A00FC5DDD /* en */,
+				221DAB7A156B3B1000FC5DDD /* zh-Hans */,
 			);
-			name = JJSocialShareManager.strings;
+			name = Evernote.strings;
 			sourceTree = "<group>";
 		};
-		2294EA0315513D2500A56CCE /* Localizable.strings */ = {
+		22707FD5156B894300773721 /* WeiboLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				22707FD4156B894300773721 /* en */,
+				22707FD6156B894A00773721 /* zh-Hans */,
+			);
+			name = WeiboLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		2294EA0315513D2500A56CCE /* SHKLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2294EA0415513D2500A56CCE /* de */,
 				2294EA0515513D2500A56CCE /* en */,
+				22707FD2156B7C8F00773721 /* zh-Hans */,
 			);
-			name = Localizable.strings;
+			name = SHKLocalizable.strings;
 			sourceTree = "<group>";
 		};
 		229D211F1550DC1800F91828 /* InfoPlist.strings */ = {

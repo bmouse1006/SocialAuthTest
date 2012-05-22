@@ -26,8 +26,9 @@
 
 @property (nonatomic, retain) IBOutlet UIButton* checkedButton;
 
--(void)setInitialText:(NSString*)text;
+-(void)addInitialText:(NSString*)text;
 -(void)addImage:(UIImage*)image;
+-(void)addURLString:(NSString*)urlString;
 
 -(void)show:(BOOL)animated;
 

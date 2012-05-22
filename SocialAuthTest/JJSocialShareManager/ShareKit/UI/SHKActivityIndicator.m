@@ -44,16 +44,17 @@ static SHKActivityIndicator *currentIndicator = nil;
 	{
 		UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
 		
-		CGFloat width = 160;
-		CGFloat height = 160;
+		CGFloat width = 120;
+		CGFloat height = 114;
 		CGRect centeredFrame = CGRectMake(round(keyWindow.bounds.size.width/2 - width/2),
-										  round(keyWindow.bounds.size.height/2 - height/2),
+//										  round(keyWindow.bounds.size.height/2 - height/2),
+                                          127,
 										  width,
 										  height);
 		
 		currentIndicator = [[SHKActivityIndicator alloc] initWithFrame:centeredFrame];
 		
-		currentIndicator.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+		currentIndicator.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
 		currentIndicator.opaque = NO;
 		currentIndicator.alpha = 0;
 		

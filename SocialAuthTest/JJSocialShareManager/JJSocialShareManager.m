@@ -80,9 +80,9 @@ static UIViewController* _rootViewController = nil;
 -(void)sendToWeiboWithMessage:(NSString*)message urlString:(NSString*)urlString image:(UIImage*)image{
     
     WBWeiboComposeViewController* controller = [WBWeiboComposeViewController controller];
-    [controller setInitialText:message];
+    [controller addInitialText:message];
     [controller addImage:image];
-    
+    [controller addURLString:urlString];
     [controller show:YES];
 }
 
@@ -102,6 +102,7 @@ static UIViewController* _rootViewController = nil;
     ENNoteComposerController* controller = [[[ENNoteComposerController alloc] initWithNibName:@"ENNoteComposerController" bundle:nil] autorelease];
     [controller setENTitle:title];
     [controller setENContent:message];
+    [controller setENURLString:urlString];
     UINavigationController* nav = [[[UINavigationController alloc] initWithRootViewController:controller] autorelease];
     [[[self class] rootViewController] presentViewController:nav animated:YES completion:NULL];
 }

@@ -10,3 +10,7 @@
 "message_sendfailed" = "Failed to send message to Weibo due to ";
 "title_ok" = "OK";
 "title_cancel" = "cancel";
+
+"Weibo send failed!" = "Weibo send failed!";
+"Weibo send succeeded!" = "Weibo send succeeded!";
+"Authentication Failed!" = "Authentication Failed!";

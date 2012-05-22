@@ -5,42 +5,46 @@
 //  Created by 金 津 on 12-5-6.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
-
+#import "EvernoteCommonDefine.h"
 #import "ENNoteComposerController.h"
 #import "ENNotebookListViewController.h"
 #import "EvernoteSDK.h"
+#import "BaseActivityLabel.h"
+#import "BaseAlertView.h"
 
-#define JJSSMLocalizedString(key, comment) \
-[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"JJSocialShareManager"]
-
-@interface ENNoteComposerController ()
+@interface ENNoteComposerController (){
+    BOOL _saveURLOnly;
+}
 
 @property (nonatomic, retain) NSArray* cells;
 @property (nonatomic, copy) NSString* ENTitle;
 @property (nonatomic, copy) NSString* ENContent;
+@property (nonatomic, copy) NSString* ENURLString;
 
 @end
 
 @implementation ENNoteComposerController
 
-@synthesize titleCell = _titleCell, contentCell = _contentCell, urlCell = _urlCell, notebookCell = _notebookCell;
+@synthesize titleCell = _titleCell, contentCell = _contentCell, urlCell = _urlCell, notebookCell = _notebookCell, urlStringCell = _urlStringCell;
 @synthesize cells = _cells;
 @synthesize sendButton = _sendButton, cancelButton = _cancelButton;
-@synthesize titleField = _titleField, contentTextView = _contentTextView;
-@synthesize ENTitle = _ENTitle, ENContent = _ENContent;
+@synthesize titleField = _titleField, contentView = _contentView;
+@synthesize ENTitle = _ENTitle, ENContent = _ENContent, ENURLString = _ENURLString;
 
 -(void)dealloc{
     self.titleCell = nil;
     self.contentCell = nil;
     self.urlCell = nil;
+    self.urlStringCell = nil;
     self.notebookCell = nil;
     self.cells = nil;
     self.sendButton = nil;
     self.cancelButton = nil;
     self.titleField = nil;
-    self.contentTextView = nil;
+    self.contentView = nil;
     self.ENContent = nil;
     self.ENTitle = nil;
+    self.ENURLString = nil;
     [super dealloc];
 }
 
@@ -60,27 +64,30 @@
         [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:self options:nil];
     }
     
-    self.sendButton.title = JJSSMLocalizedString(@"title_send", nil);
+    self.sendButton.title = EvernoteLocalizedString(@"title_send", nil);
     
-    self.titleCell.textLabel.text = JJSSMLocalizedString(@"title_title", nil);
-    self.titleField.placeholder = JJSSMLocalizedString(@"title_title", nil);
+    self.titleCell.textLabel.text = EvernoteLocalizedString(@"title_title", nil);
+    self.titleField.placeholder = EvernoteLocalizedString(@"title_title", nil);
     self.titleField.text = self.ENTitle;
-    self.contentCell.textLabel.text = JJSSMLocalizedString(@"title_message", nil);
-    self.contentTextView.text = self.ENContent;
-    self.urlCell.textLabel.text = JJSSMLocalizedString(@"title_url", nil);
-    self.notebookCell.textLabel.text = JJSSMLocalizedString(@"title_notebook", nil);
+    self.contentCell.textLabel.text = EvernoteLocalizedString(@"title_message", nil);
+    [self.contentView loadHTMLString:self.ENContent baseURL:nil];
+    self.urlStringCell.textLabel.text = EvernoteLocalizedString(@"title_urlstring", nil);
+    self.urlStringCell.detailTextLabel.text = self.ENURLString;
+    self.urlCell.textLabel.text = EvernoteLocalizedString(@"title_saveurlonly", nil);
+    self.notebookCell.textLabel.text = EvernoteLocalizedString(@"title_notebook", nil);
+//    self.notebookCell.detailTextLabel.text = @"";
     
     self.navigationItem.rightBarButtonItem = self.sendButton;
     self.navigationItem.leftBarButtonItem = self.cancelButton;
     
-    self.cells = [NSArray arrayWithObjects:self.titleCell, self.contentCell, self.urlCell, self.notebookCell, nil];
+    self.cells = [NSArray arrayWithObjects:self.titleCell, self.contentCell, self.urlStringCell, self.urlCell, self.notebookCell, nil];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [[NSBundle mainBundle] localizedStringForKey:@"" value:@"" table:nil];
-    self.title = JJSSMLocalizedString(@"title_sendtoevernote", nil);
+    self.title = EvernoteLocalizedString(@"title_sendtoevernote", nil);
     
     // Do any additional setup after loading the view from its nib.
     NSString *EVERNOTE_HOST = @"sandbox.evernote.com";
@@ -110,16 +117,22 @@
     [super viewDidAppear:animated];
     EvernoteSession *session = [EvernoteSession sharedSession];
     if (session.isAuthenticated == NO){
+        BaseActivityLabel* activity = [BaseActivityLabel loadFromBundle];
+        activity.message = EvernoteLocalizedString(@"message_verifyevernote", nil);
+        [activity show];
         [session authenticateWithCompletionHandler:^(NSError *error) {
             if (error || !session.isAuthenticated) {
-                UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:JJSSMLocalizedString(@"title_error", nil)
-                                                                 message:JJSSMLocalizedString(@"message_couldnotauthenticate", nil)
+                UIAlertView *alert = [[[UIAlertView alloc] initWithTitle:EvernoteLocalizedString(@"title_error", nil)
+                                                                 message:EvernoteLocalizedString(@"message_couldnotauthenticate", nil)
                                                                 delegate:nil 
-                                                       cancelButtonTitle:JJSSMLocalizedString(@"title_ok", nil) 
+                                                       cancelButtonTitle:EvernoteLocalizedString(@"title_ok", nil) 
                                                        otherButtonTitles:nil] autorelease];
                 [alert show];
                 [self dismissViewControllerAnimated:YES completion:NULL];
+                [activity setFinished:NO];
             } else {
+                //success
+                [activity setFinished:YES];
                 [self updateUI];
             } 
         }];
@@ -137,6 +150,31 @@
     BOOL authenticated = [EvernoteSession sharedSession].isAuthenticated;
     self.sendButton.enabled = authenticated;
     self.notebookCell.userInteractionEnabled = authenticated;
+    //fetch stored or default notebook guid and name
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString* noteBookName = [defaults objectForKey:kUserDefinedNotebookName];
+    if (noteBookName.length == 0 && authenticated){
+        //fetch default notebook
+        BaseActivityLabel* activityLabel = [BaseActivityLabel loadFromBundle];
+        activityLabel.message = EvernoteLocalizedString(@"message_fetchdefaultnotebook", nil);
+        [activityLabel show];
+        EvernoteNoteStore* store = [EvernoteNoteStore noteStore];
+        [store getDefaultNotebookWithSuccess:^(EDAMNotebook* notebook){
+            [defaults setObject:notebook.name forKey:kUserDefinedNotebookName];
+            [defaults setObject:notebook.guid forKey:kUserDefinedNotebookGUID];
+            [defaults synchronize];
+            
+            self.notebookCell.detailTextLabel.text = notebook.name;
+            [self.notebookCell setNeedsLayout];
+            [activityLabel setFinished:YES];
+        } failure:^(NSError* error){
+            [activityLabel setFinished:NO];
+        }];
+    }else{
+        NSLog(@"%@", noteBookName);
+        self.notebookCell.detailTextLabel.text = noteBookName;
+        [self.notebookCell setNeedsLayout];
+    }
 }
 
 -(void)setENContent:(NSString*)content{
@@ -144,7 +182,7 @@
         [_ENContent release];
         _ENContent = [content copy];
     }
-    self.contentTextView.text = content;
+//    self.contentTextView.text = content;
 }
 
 -(void)setENTitle:(NSString*)title{
@@ -155,29 +193,69 @@
     self.titleField.text = title;
 }
 
+-(void)setENURLString:(NSString*)urlString{
+    if (_ENURLString != urlString){
+        [_ENURLString release];
+        _ENURLString = [urlString copy];
+    }
+}
+
 #pragma mark - action call back
 -(void)cancelButtonClicked:(id)sender{
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+-(IBAction)saveURLOnlyChanged:(id)sender{
+    UISwitch* switcher = (UISwitch*)sender;
+    _saveURLOnly = switcher.on;
+    if (_saveURLOnly){
+        self.cells = [NSArray arrayWithObjects:self.titleCell, self.urlStringCell, self.urlCell, self.notebookCell, nil];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }else{
+        self.cells = [NSArray arrayWithObjects:self.titleCell, self.contentCell, self.urlStringCell, self.urlCell, self.notebookCell, nil];
+        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 -(IBAction)sendButtonClicked:(id)sender{
+    
+    NSString* noteTemplate = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:kENNoteContentTemplateName ofType:@"xml"] 
+                                                       encoding:NSUTF8StringEncoding 
+                                                          error:NULL];
+    NSString* contentText = self.ENContent;
+    
+    if (_saveURLOnly){
+        contentText = @"";
+    }
+
+    NSString* formattedContent = [NSString stringWithFormat:noteTemplate, contentText];
+    NSLog(@"%@", formattedContent);
+    
     EvernoteNoteStore* noteStore = [EvernoteNoteStore noteStore];
 
+    EDAMNoteAttributes * attributes = [[[EDAMNoteAttributes alloc] init] autorelease];
+    attributes.sourceURL = self.ENURLString;
+    
     EDAMNote* note = [[[EDAMNote alloc] init] autorelease];
     note.title = self.titleField.text;
-    note.content = self.contentTextView.text;
-    note.notebookGuid = noteStore
     
-    @try {
-        [noteStore createNote:note success:^(NSString* note){
-            NSLog(@"create success %@", note);
-        } failure:^(NSError* error){
-            NSLog(@"create failed %@", [error localizedDescription]);
-        }];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@", exception.reason);
-    }
+    note.content = formattedContent;
+    note.notebookGuid = [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefinedNotebookGUID];
+    note.attributes = attributes;
+    
+    [noteStore createNote:note success:^(EDAMNote* note){
+        NSLog(@"create success %@", note);
+        BaseAlertView* alertView = [BaseAlertView loadFromBundle];
+        alertView.message = EvernoteLocalizedString(@"message_sendtoevernoteok", nil);
+        [alertView show];
+    } failure:^(NSError* error){
+        NSLog(@"create failed %@", [error description]);
+        BaseAlertView* alertView = [BaseAlertView loadFromBundle];
+        alertView.message = EvernoteLocalizedString(@"message_sendtoevernoteerror", nil);
+        [alertView show];
+    }];
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - table view datasource

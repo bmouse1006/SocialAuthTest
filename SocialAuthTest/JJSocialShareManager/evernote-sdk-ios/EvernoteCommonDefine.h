@@ -6,8 +6,10 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define EvernoteLocalizedString(key, comment) \
+[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"Evernote"]
 
-@protocol EvernoteCommonDefine <NSObject>
+#define kUserDefinedNotebookName @"EVERNOTE_USERDEFINEDNOTEBOOKNAME"
+#define kUserDefinedNotebookGUID @"EVERNOTE_USERDEFINEDNOTEBOOKGUID"
 
-@end
+#define kENNoteContentTemplateName @"ENNoteContentTemplate"

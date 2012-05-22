@@ -5,12 +5,10 @@
 //  Created by 金 津 on 12-5-21.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
-
+#import "EvernoteCommonDefine.h"
 #import "ENNotebookListViewController.h"
 #import "EvernoteSDK.h"
-
-#define JJSSMLocalizedString(key, comment) \
-[[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:@"JJSocialShareManager"]
+#import "BaseActivityLabel.h"
 
 @interface ENNotebookListViewController ()
 
@@ -40,21 +38,8 @@
 {
     [super viewDidLoad];
     
-    self.title = JJSSMLocalizedString(@"title_notebooklist", nil);
+    self.title = EvernoteLocalizedString(@"title_notebooklist", nil);
 
-    EvernoteNoteStore* noteStore = [EvernoteNoteStore noteStore];
-    
-    @try {
-        [noteStore listNotebooksWithSuccess:^(NSArray* notebooks){
-            self.notebookList = notebooks;
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
-        } failure:^(NSError* error){
-            
-        }];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"%@", exception.reason);
-    }
 }
 
 - (void)viewDidUnload
@@ -62,6 +47,22 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    BaseActivityLabel* activityLabel = [BaseActivityLabel loadFromBundle];
+    activityLabel.message = EvernoteLocalizedString(@"message_fetchnotebooklist", nil);
+    [activityLabel show];
+    
+    EvernoteNoteStore* noteStore = [EvernoteNoteStore noteStore];
+    [noteStore listNotebooksWithSuccess:^(NSArray* notebooks){
+        self.notebookList = notebooks;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [activityLabel setFinished:YES];
+    } failure:^(NSError* error){
+        [activityLabel setFinished:NO];        
+    }];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -96,6 +97,12 @@
     
     cell.textLabel.text = notebook.name;
     
+    if ([notebook.guid isEqualToString:[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefinedNotebookGUID]]){
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;        
+    }
+    
     return cell;
 }
 
@@ -104,7 +111,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    EDAMNotebook* notebook = [self.notebookList objectAtIndex:indexPath.row];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:notebook.name forKey:kUserDefinedNotebookName];
+    [defaults setObject:notebook.guid forKey:kUserDefinedNotebookGUID];
+    [defaults synchronize];
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -75,7 +75,7 @@
     } completion:^(BOOL finished){
         if (finished == YES){
             [self removeFromSuperview];
-            DebugLog(@"view removed", nil);
+            NSLog(@"view removed");
             if ([blockSelf.jjViewDelegate respondsToSelector:@selector(viewDidDismiss:)]){
                 [blockSelf.jjViewDelegate viewDidDismiss:blockSelf];
             }
