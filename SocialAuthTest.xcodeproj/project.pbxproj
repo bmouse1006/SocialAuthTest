@@ -19,7 +19,7 @@
 		221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB62156B350C00FC5DDD /* JJPickerView.m */; };
 		221DAB72156B350C00FC5DDD /* JJPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB63156B350C00FC5DDD /* JJPickerView.xib */; };
 		221DAB77156B3B0A00FC5DDD /* Evernote.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB79156B3B0A00FC5DDD /* Evernote.strings */; };
-		22389B3C156C91B300EDA6B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22389B3B156C91B300EDA6B5 /* Reachability.m */; };
+		22389B42156C937900EDA6B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22389B41156C937900EDA6B5 /* Reachability.m */; };
 		22707FD0156B680800773721 /* ENNoteContentTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 22707FCF156B680800773721 /* ENNoteContentTemplate.xml */; };
 		22707FD3156B894300773721 /* WeiboLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22707FD5156B894300773721 /* WeiboLocalizable.strings */; };
 		22872CFC155205E90083E700 /* GCOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 22872CAF155205E90083E700 /* GCOAuth.m */; };
@@ -146,7 +146,6 @@
 		2294EA7715513D2500A56CCE /* SHKCustomShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294E9FF15513D2500A56CCE /* SHKCustomShareMenu.m */; };
 		2294EA7815513D2500A56CCE /* SHKCustomShareMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0115513D2500A56CCE /* SHKCustomShareMenuCell.m */; };
 		2294EA7915513D2500A56CCE /* SHKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2294EA0315513D2500A56CCE /* SHKLocalizable.strings */; };
-		2294EA7A15513D2500A56CCE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0815513D2500A56CCE /* Reachability.m */; };
 		2294EA7B15513D2500A56CCE /* SHKCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA0D15513D2500A56CCE /* SHKCopy.m */; };
 		2294EA7C15513D2500A56CCE /* SHKMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA1015513D2500A56CCE /* SHKMail.m */; };
 		2294EA7D15513D2500A56CCE /* SHKSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 2294EA1315513D2500A56CCE /* SHKSafari.m */; };
@@ -243,8 +242,8 @@
 		221DAB78156B3B0A00FC5DDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Evernote.strings; sourceTree = "<group>"; };
 		221DAB7A156B3B1000FC5DDD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Evernote.strings"; sourceTree = "<group>"; };
 		221DAB7B156B3B8900FC5DDD /* EvernoteCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvernoteCommonDefine.h; sourceTree = "<group>"; };
-		22389B3A156C91B300EDA6B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		22389B3B156C91B300EDA6B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		22389B40156C937900EDA6B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		22389B41156C937900EDA6B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		22707FCF156B680800773721 /* ENNoteContentTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ENNoteContentTemplate.xml; sourceTree = "<group>"; };
 		22707FD2156B7C8F00773721 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SHKLocalizable.strings"; sourceTree = "<group>"; };
 		22707FD4156B894300773721 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeiboLocalizable.strings; sourceTree = "<group>"; };
@@ -690,11 +689,11 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		22389B39156C919C00EDA6B5 /* Reachability */ = {
+		22389B3F156C936400EDA6B5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				22389B3A156C91B300EDA6B5 /* Reachability.h */,
-				22389B3B156C91B300EDA6B5 /* Reachability.m */,
+				22389B40156C937900EDA6B5 /* Reachability.h */,
+				22389B41156C937900EDA6B5 /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -1015,6 +1014,7 @@
 		2294E78A155129E000A56CCE /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				22389B3F156C936400EDA6B5 /* Reachability */,
 				221DAB4B156B350C00FC5DDD /* BaseView */,
 				2294E8B815512A8000A56CCE /* ASIHTTPRequest */,
 				2294E78B155129FE00A56CCE /* SBJSON */,
@@ -1057,7 +1057,6 @@
 		2294E8B815512A8000A56CCE /* ASIHTTPRequest */ = {
 			isa = PBXGroup;
 			children = (
-				22389B39156C919C00EDA6B5 /* Reachability */,
 				2294E8BF15512A8000A56CCE /* Classes */,
 				2294E91315512A8000A56CCE /* External */,
 			);
@@ -1733,7 +1732,6 @@
 				2294EA7615513D2500A56CCE /* SHKCustomFormFieldCell.m in Sources */,
 				2294EA7715513D2500A56CCE /* SHKCustomShareMenu.m in Sources */,
 				2294EA7815513D2500A56CCE /* SHKCustomShareMenuCell.m in Sources */,
-				2294EA7A15513D2500A56CCE /* Reachability.m in Sources */,
 				2294EA7B15513D2500A56CCE /* SHKCopy.m in Sources */,
 				2294EA7C15513D2500A56CCE /* SHKMail.m in Sources */,
 				2294EA7D15513D2500A56CCE /* SHKSafari.m in Sources */,
@@ -1811,7 +1809,7 @@
 				221DAB6A156B350C00FC5DDD /* BaseMessageView.m in Sources */,
 				221DAB6C156B350C00FC5DDD /* BaseView.m in Sources */,
 				221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */,
-				22389B3C156C91B300EDA6B5 /* Reachability.m in Sources */,
+				22389B42156C937900EDA6B5 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
