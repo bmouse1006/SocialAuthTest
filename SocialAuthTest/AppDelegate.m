@@ -35,6 +35,9 @@
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    
     return YES;
 }
 
@@ -66,7 +69,7 @@
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    if ([[EvernoteSession sharedSession] handleOpenURL:url]) {
+    if ([[JJSocialShareManager sharedManager] evernoteHandleOpenURL:url]) {
         return YES;
     } 
     return NO;

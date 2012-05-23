@@ -19,7 +19,7 @@
 		221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 221DAB62156B350C00FC5DDD /* JJPickerView.m */; };
 		221DAB72156B350C00FC5DDD /* JJPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB63156B350C00FC5DDD /* JJPickerView.xib */; };
 		221DAB77156B3B0A00FC5DDD /* Evernote.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221DAB79156B3B0A00FC5DDD /* Evernote.strings */; };
-		22389B42156C937900EDA6B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22389B41156C937900EDA6B5 /* Reachability.m */; };
+		22389B4E156CB17700EDA6B5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 22389B4D156CB17700EDA6B5 /* Reachability.m */; };
 		22707FD0156B680800773721 /* ENNoteContentTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 22707FCF156B680800773721 /* ENNoteContentTemplate.xml */; };
 		22707FD3156B894300773721 /* WeiboLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22707FD5156B894300773721 /* WeiboLocalizable.strings */; };
 		22872CFC155205E90083E700 /* GCOAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 22872CAF155205E90083E700 /* GCOAuth.m */; };
@@ -242,8 +242,9 @@
 		221DAB78156B3B0A00FC5DDD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Evernote.strings; sourceTree = "<group>"; };
 		221DAB7A156B3B1000FC5DDD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Evernote.strings"; sourceTree = "<group>"; };
 		221DAB7B156B3B8900FC5DDD /* EvernoteCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvernoteCommonDefine.h; sourceTree = "<group>"; };
-		22389B40156C937900EDA6B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		22389B41156C937900EDA6B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		22389B4C156CB17700EDA6B5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		22389B4D156CB17700EDA6B5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		22389B54156CBEB200EDA6B5 /* WeiboCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCommonDefine.h; sourceTree = "<group>"; };
 		22707FCF156B680800773721 /* ENNoteContentTemplate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ENNoteContentTemplate.xml; sourceTree = "<group>"; };
 		22707FD2156B7C8F00773721 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SHKLocalizable.strings"; sourceTree = "<group>"; };
 		22707FD4156B894300773721 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/WeiboLocalizable.strings; sourceTree = "<group>"; };
@@ -689,11 +690,11 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		22389B3F156C936400EDA6B5 /* Reachability */ = {
+		22389B4B156CB17700EDA6B5 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				22389B40156C937900EDA6B5 /* Reachability.h */,
-				22389B41156C937900EDA6B5 /* Reachability.m */,
+				22389B4C156CB17700EDA6B5 /* Reachability.h */,
+				22389B4D156CB17700EDA6B5 /* Reachability.m */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -891,6 +892,7 @@
 				2294E75515511FDC00A56CCE /* WBWeiboComposeViewController.m */,
 				2294E75615511FDC00A56CCE /* WBWeiboComposeViewController.xib */,
 				22707FD5156B894300773721 /* WeiboLocalizable.strings */,
+				22389B54156CBEB200EDA6B5 /* WeiboCommonDefine.h */,
 			);
 			path = Weibo;
 			sourceTree = "<group>";
@@ -1014,7 +1016,7 @@
 		2294E78A155129E000A56CCE /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				22389B3F156C936400EDA6B5 /* Reachability */,
+				22389B4B156CB17700EDA6B5 /* Reachability */,
 				221DAB4B156B350C00FC5DDD /* BaseView */,
 				2294E8B815512A8000A56CCE /* ASIHTTPRequest */,
 				2294E78B155129FE00A56CCE /* SBJSON */,
@@ -1809,7 +1811,7 @@
 				221DAB6A156B350C00FC5DDD /* BaseMessageView.m in Sources */,
 				221DAB6C156B350C00FC5DDD /* BaseView.m in Sources */,
 				221DAB71156B350C00FC5DDD /* JJPickerView.m in Sources */,
-				22389B42156C937900EDA6B5 /* Reachability.m in Sources */,
+				22389B4E156CB17700EDA6B5 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1911,6 +1913,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialAuthTest/SocialAuthTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SocialAuthTest/JJSocialShareManager/ThirdParty/Reachability\"";
 				INFOPLIST_FILE = "SocialAuthTest/SocialAuthTest-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1927,6 +1930,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SocialAuthTest/SocialAuthTest-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/SocialAuthTest/JJSocialShareManager/ThirdParty/Reachability\"";
 				INFOPLIST_FILE = "SocialAuthTest/SocialAuthTest-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
