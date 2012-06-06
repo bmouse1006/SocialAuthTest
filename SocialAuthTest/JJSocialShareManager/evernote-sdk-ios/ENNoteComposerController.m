@@ -96,19 +96,6 @@ static BOOL _startHandleOpenURL;
     [[NSBundle mainBundle] localizedStringForKey:@"" value:@"" table:nil];
     self.title = EvernoteLocalizedString(@"title_sendtoevernote", nil);
     
-    // Do any additional setup after loading the view from its nib.
-    NSString *EVERNOTE_HOST = @"sandbox.evernote.com";
-    
-    // Fill in the consumer key and secret with the values that you received from Evernote
-    // To get an API key, visit http://dev.evernote.com/documentation/cloud/
-    NSString *CONSUMER_KEY = @"bmouse1006-3334";
-    NSString *CONSUMER_SECRET = @"8efb9c47b2113834";
-    
-    // set up Evernote session singleton
-    [EvernoteSession setSharedSessionHost:EVERNOTE_HOST 
-                              consumerKey:CONSUMER_KEY 
-                           consumerSecret:CONSUMER_SECRET];
-    
     [self commonInit];
     [self.tableView reloadData];
 }
@@ -264,7 +251,9 @@ static BOOL _startHandleOpenURL;
     NSString* noteTemplate = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:kENNoteContentTemplateName ofType:@"xml"] 
                                                        encoding:NSUTF8StringEncoding 
                                                           error:NULL];
-    NSString* contentText = self.ENContent;
+    NSString* contentText =[self.ENContent stringByReplacingOccurrencesOfRegex:@"<iframe\\s*[^>]*>" withString:@""];
+    contentText = [contentText stringByReplacingOccurrencesOfRegex:@"<img\\s*[^>]*>" withString:@""];
+    contentText = [contentText stringByReplacingOccurrencesOfString:@"<br>" withString:@"<br/>"];
     
     if (_saveURLOnly){
         contentText = @"";
